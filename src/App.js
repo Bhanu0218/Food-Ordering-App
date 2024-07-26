@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { StrictMode, Suspense } from 'react';
 import { lazy } from 'react';
 import ReactDOM from 'react-dom/client';
 import '../index.css';
@@ -53,4 +53,8 @@ const AppRouter = createBrowserRouter([
 ]);
 
 const root = ReactDOM.createRoot(document.querySelector('#root'));
-root.render(<RouterProvider router={AppRouter} />);
+root.render(
+  <StrictMode>
+    <RouterProvider router={AppRouter} />
+  </StrictMode>
+);
